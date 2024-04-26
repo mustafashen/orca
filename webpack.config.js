@@ -16,11 +16,14 @@ module.exports = [
         title: "Orca",
         inject: "body",
         template: "./public/index.html",
-      }),
-      new TsconfigPathsPlugin({
-        configFile: path.resolve(__dirname, "./tsconfig.webpack.json"),
-      }),
+      })
     ],
+    resolve: {
+      plugins: [new TsconfigPathsPlugin({
+        configFile: path.join(__dirname, "./tsconfig.webpack.json"),
+      })],
+      extensions: [".ts", ".js"]
+    },
     devServer: {
       client: {
         overlay: {
@@ -30,5 +33,14 @@ module.exports = [
         },
       },
     },
+    module: {
+      rules: [
+        { test: /\.([cm]?ts)$/, loader: "ts-loader" },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
+        },
+      ]
+    }
   },
 ];
