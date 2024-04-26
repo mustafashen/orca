@@ -1,0 +1,18 @@
+export const vesselStatusCodes = {
+  0: "Underway using engine",
+  1: "At anchor",
+  2: "Not under command",
+  3: "Restricted maneuverability",
+  4: "Constrained by her draught",
+  5: "Moored",
+  6: "Aground",
+  7: "Engaged in fishing",
+  8: "Underway sailing",
+  9: "Reserved (Dangerous/Harmful Goods)",
+  10: "Reserved (Dangerous/Harmful/Pollutants, WIG)",
+  11: "Power-driven vessel towing astern (> 200m)",
+  12: "Power-driven vessel pushing ahead or towing alongside",
+  13: "Reserved for future use",
+  14: "AIS-SART Active, AIS-MOB, AIS-EPIRB",
+  15: "Undefined (default)",
+};
